@@ -2,7 +2,7 @@ from sample.LRU_algorythm import *
 from sample.open_data import *
 from statistics import mean
 
-path = "data/test_values.txt"
+path = "data/pages1.csv"
 matrix = openFileAndPutIntoMatrix(path)
 
 width, height = checkWidthAndHeightOfFile(path)

@@ -13,8 +13,10 @@ class LruAlgorythm:
         self.ramka = Frames(self.number)
         self.listOfPages = []
         self.attempt = 1
+
         for i in range(21): # To easiest way index 0 will be never used. !20! is max value
             self.listOfPages.append(PageLRU(i))
+
 
         for page in queueOfPages:
             # print ("Ramki: " + str(self.ramka.listOfFrames))
@@ -42,13 +44,13 @@ class LruAlgorythm:
         self.attempt += 1
 
     def findLeastFrequently(self):
-        minvalue = self.listOfPages[1].numberOfAtempt
+        minOldNumber = 99999999
         indexPageToChange = 0
 
         i = 0
         for page in self.ramka.listOfFrames:
-            if self.listOfPages[page].numberOfAtempt < minvalue:
-                minvalue = self.listOfPages[page].numberOfAtempt
+            if self.listOfPages[page].numberOfOld < minOldNumber:
+                minOldNumber = self.listOfPages[page].numberOfOld
                 indexPageToChange = i
             i+=1
 
