@@ -1,1 +1,3 @@
-from sample.page_LRU import PageLRU
+from sample.LRU_algorythm import *
+
+lruAlgorythm()
