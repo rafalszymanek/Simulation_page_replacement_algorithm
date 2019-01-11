@@ -2,16 +2,22 @@ from sample.page_LRU import PageLRU
 from sample.frames import Frames
 
 
-def lruAlgorythm():
-    ramka = Frames(3)
-    queueOfPages = [1, 20, 4, 1, 11, 15]
-    listOfPages = []
+class LruAlgorythm:
+    def __init__(self, number):
+        self.ramka = Frames(number)
+        self.queueOfPages = [1, 20, 1, 1, 11, 15]
+        self.listOfPages = []
 
-    for i in range(20):
-        listOfPages.append(PageLRU(i))
+    def doAlgorythm(self):
+        for i in range(20): # To easiest way index 0 will be never used
+            self.listOfPages.append(PageLRU(i))
 
+        for page in self.queueOfPages:
+            if self.ramka.checkIsPagesIdInFrames(page):
+                print(True)
+            else:
+                print("wkładam do ramki" + str(page))
+                self.ramka.addPageIdToFrame(page)
+                self.ramka.addPageFault()
 
-
-
-    for page in queueOfPages:
-        ramka.checkIsPagesIdInFrames(page)
+        print(self.ramka.pageFault)

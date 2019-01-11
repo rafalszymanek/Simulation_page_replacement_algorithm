@@ -1,3 +1,5 @@
 from sample.LRU_algorythm import *
 
-lruAlgorythm()
+algorytm = LruAlgorythm(3)
+
+algorytm.doAlgorythm()
