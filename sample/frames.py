@@ -10,13 +10,8 @@ class Frames():
 
         return False
 
-    def addPageIdToFrame(self, pageId):
-        i = 0
-        for frame in self.listOfFrames:
-            if frame == 0:
-                self.listOfFrames[i] = pageId
-                break;
-            i+=1
+    def addPageIdToFrame(self, pageId, indexPageToChange):
+        self.listOfFrames[indexPageToChange] = pageId
 
     def addPageFault(self):
         self.pageFault+=1
