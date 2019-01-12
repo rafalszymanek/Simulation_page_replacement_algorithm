@@ -39,8 +39,8 @@ class LruAlgorythm:
 
 
 
-    def usePage(self, page):
-        self.listOfPages[page].usePage(self.attempt)
+    def usePage(self, pageId):
+        self.listOfPages[pageId].usePage(self.attempt)
         self.attempt += 1
 
     def findLeastFrequently(self):
@@ -48,9 +48,12 @@ class LruAlgorythm:
         indexPageToChange = 0
 
         i = 0
-        for page in self.ramka.listOfFrames:
-            if self.listOfPages[page].numberOfOld < minOldNumber:
-                minOldNumber = self.listOfPages[page].numberOfOld
+        for frame in self.ramka.listOfFrames:
+            if frame == None:
+                indexPageToChange = i
+                break
+            elif self.listOfPages[frame].numberOfOld < minOldNumber:
+                minOldNumber = self.listOfPages[frame].numberOfOld
                 indexPageToChange = i
             i+=1
 
