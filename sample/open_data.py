@@ -1,4 +1,12 @@
 def openFileAndPutIntoMatrix(path):
+    """
+    This function open file by path
+    That file contains numbers(INT) separate by space.
+    Each row is another attempt.
+    Put all read data into matrix (list2D)
+
+    Return matrix that contains all read data
+    """
     width, height = checkWidthAndHeightOfFile(path)
     matrix = [[0 for x in range(width)] for y in range(height)]
     fileWithData = open(path, "r")
@@ -14,6 +22,10 @@ def openFileAndPutIntoMatrix(path):
     return matrix
 
 def checkWidthAndHeightOfFile(path):
+    """
+    This function open file by path
+    Returns width and height of file and also a matrix from openFileAndPutIntoMatrix
+    """
     fileWithData = open(path, "r")
     width = 0
     height = 0
