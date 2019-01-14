@@ -1,4 +1,4 @@
-class PageLRU:
+class Page:
     def __init__(self, id):
         self.id = id
         self.numberOfOld = 0
@@ -7,10 +7,10 @@ class PageLRU:
     def checkId(self):
         return self.id
 
-    def usePage(self, attempt):
+    def usePageLRU(self, attempt):
         self.numberOfOld = attempt
 
-    def usePageLRU(self, attempt):
+    def usePageLFU(self, attempt):
         self.numberOfOld = attempt
         self.numberOfAttempt += 1
 

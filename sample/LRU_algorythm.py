@@ -1,4 +1,4 @@
-from sample.page_LRU import PageLRU
+from sample.page import Page
 from sample.frames import Frames
 
 
@@ -14,8 +14,8 @@ class LruAlgorythm:
         self.listOfPages = []
         self.attempt = 1
 
-        for i in range(21): # To easiest way index 0 will be never used. !20! is max value
-            self.listOfPages.append(PageLRU(i))
+        for i in range(21):     # To easiest way! index 0 will be never used. !20! is max value
+            self.listOfPages.append(Page(i))
 
 
         for page in queueOfPages:
@@ -40,7 +40,7 @@ class LruAlgorythm:
 
 
     def usePage(self, pageId):
-        self.listOfPages[pageId].usePage(self.attempt)
+        self.listOfPages[pageId].usePageLRU(self.attempt)
         self.attempt += 1
 
     def findLeastFrequently(self):

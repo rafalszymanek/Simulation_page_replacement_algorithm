@@ -1,13 +1,12 @@
 class Frames():
     def __init__(self, size):
-        self.listOfFrames = [None] * size
+        self.listOfFrames = [None] * size   # List Of All frames not a class, it's a int
         self.pageFault = 0
 
-    def checkIsPagesIdInFrames(self,pageId):
+    def checkIsPagesIdInFrames(self, pageId):
         for frame in self.listOfFrames:
             if frame == pageId:
                 return True
-
         return False
 
     def addPageIdToFrame(self, pageId, indexPageToChange):
