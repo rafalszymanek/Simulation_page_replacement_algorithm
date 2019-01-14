@@ -9,6 +9,7 @@ class LfuAlgorythm:
         self.listOfPages = []
         self.attempt = 1
 
+
     def doAlgorythm(self, queueOfPages):
         self.frame = Frames(self.number)
         self.listOfPages = []
@@ -27,12 +28,13 @@ class LfuAlgorythm:
                 # print("Ineks do zastąpienia: " + str(indexPageToChange))
                 self.frame.addPageIdToFrame(page, indexPageToChange)
                 self.frame.addPageFault()
-
-            # print ("Ramki po zmianie: " + str(self.frame.listOfFrames) + "\n\n")
-            # print("Liczba błędów: " + str(self.frame.pageFault))
-
+        #     else:
+        #         print("Znajduje się w ramce")
+        #     print ("Ramki po zmianie: " + str(self.frame.listOfFrames) + "\n\n")
+        #     print("Liczba błędów: " + str(self.frame.pageFault))
         # print(self.frame.pageFault)
-        return self.frame.pageFault
+        #
+        # return self.frame.pageFault
 
 
     def usePage(self, pageId):
@@ -41,15 +43,13 @@ class LfuAlgorythm:
 
 
     def findLeastFrequently(self):
-        minOldNumber = 99999999
-        minNumberOfAttempt = 99999999
+        minOldNumber = self.listOfPages[int(self.frame.listOfFrames[0])].numberOfOld    # First element of Frames
+        minNumberOfAttempt = self.listOfPages[int(self.frame.listOfFrames[0])].numberOfAttempt
         indexPageToChange = 0
-
-
 
         i = 0
         for frame in self.frame.listOfFrames:
-            if frame == None:
+            if frame == 0:
                 indexPageToChange = i
                 break
             elif self.listOfPages[frame].numberOfAttempt < minNumberOfAttempt:

@@ -1,5 +1,4 @@
 #Generate random values to list and put it to file
-
 import random
 import sys
 

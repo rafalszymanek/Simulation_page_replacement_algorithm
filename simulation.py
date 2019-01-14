@@ -3,14 +3,14 @@ from sample.LFU_algorythm import *
 from sample.open_data import *
 from statistics import mean
 
-path = "data/pages1.csv"
+path = "data/test_values.txt"
 matrix = openFileAndPutIntoMatrix(path)
 
 width, height = checkWidthAndHeightOfFile(path)
 
 
 ####################
-# LFU
+# LRU
 ####################
 print ("------------\nLRU\n------------\n")
 

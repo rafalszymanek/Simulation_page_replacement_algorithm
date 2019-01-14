@@ -1,6 +1,6 @@
 class Frames():
     def __init__(self, size):
-        self.listOfFrames = [None] * size   # List Of All frames not a class, it's a int
+        self.listOfFrames = [0] * size   # List Of All frames not a class, it's a int
         self.pageFault = 0
 
     def checkIsPagesIdInFrames(self, pageId):
